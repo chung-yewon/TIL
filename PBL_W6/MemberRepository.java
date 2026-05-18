@@ -1,0 +1,10 @@
+package com.example.demo.repository;
+import com.example.demo.domain.Member;
+import java.util.List;
+
+public interface MemberRepository {
+    void save(Member member);
+    Member findByName(String name);
+    List<Member> findAll();
+    boolean isDuplicate(String name);
+}
