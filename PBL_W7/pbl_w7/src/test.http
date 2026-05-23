@@ -1,0 +1,55 @@
+### 1. Lion(아기사자) 등록 테스트
+POST http://localhost:8080/members/lions
+Content-Type: application/json
+
+{
+  "name": "이영희",
+  "major": "컴퓨터공학과",
+  "generation": 13,
+  "part": "백엔드",
+  "studentId": "20230002"
+}
+
+### 2. Staff(운영진) 등록 테스트
+POST http://localhost:8080/members/staffs
+Content-Type: application/json
+
+{
+  "name": "박민수",
+  "major": "소프트웨어학과",
+  "generation": 13,
+  "part": "백엔드",
+  "position": "부대표"
+}
+
+### 3. 이름 중복 등록 시 예외 처리 테스트 (409 Conflict)
+POST http://localhost:8080/members/staffs
+Content-Type: application/json
+
+{
+  "name": "박민수",
+  "major": "소프트웨어학과",
+  "generation": 13,
+  "part": "백엔드",
+  "position": "부대표"
+}
+
+### 4. 단일 멤버 조회 테스트 (200 OK)
+GET http://localhost:8080/members/%EB%B0%95%EB%AF%BC%EC%88%98
+
+### 5. 없는 멤버 조회 테스트 (404 Not Found)
+GET http://localhost:8080/members/%ED%99%8D%EA%B8%B8%EB%8F%99
+
+### 6. Lion 정보 수정 테스트 (200 OK)
+PUT http://localhost:8080/members/lions/%EC%9D%B4%EC%98%81%ED%9D%AC
+Content-Type: application/json
+
+{
+  "major": "정보통신공학과",
+  "generation": 13,
+  "part": "프론트엔드",
+  "studentId": "20230001"
+}
+
+### 7. 멤버 삭제 테스트 (204 No Content)
+DELETE http://localhost:8080/members/%EC%9D%B4%EC%98%81%ED%9D%AC
