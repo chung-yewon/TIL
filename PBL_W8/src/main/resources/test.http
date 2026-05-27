@@ -1,0 +1,43 @@
+### 1. Lion 등록
+POST http://localhost:8080/members/lions
+Content-Type: application/json
+
+{
+  "name": "이영희",
+  "major": "컴퓨터공학과",
+  "generation": 13,
+  "part": "백엔드",
+  "studentId": "20230002"
+}
+
+### 2. Staff 등록
+POST http://localhost:8080/members/staffs
+Content-Type: application/json
+
+{
+  "name": "박민수",
+  "major": "소프트웨어학과",
+  "generation": 13,
+  "part": "백엔드",
+  "position": "부대표"
+}
+
+### 3. 전체 멤버 조회
+GET http://localhost:8080/members
+
+### 4. ID로 단일 멤버 조회
+GET http://localhost:8080/members/1
+
+### 5. Lion 수정
+PUT http://localhost:8080/members/lions/1
+Content-Type: application/json
+
+{
+  "major": "정보통신공학과",
+  "generation": 13,
+  "part": "프론트엔드",
+  "studentId": "20230002"
+}
+
+### 6. 멤버 삭제
+DELETE http://localhost:8080/members/1
